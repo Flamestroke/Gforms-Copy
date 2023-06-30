@@ -29,20 +29,13 @@ app.post("/Form", (req, res) => {
 
   let query = `CREATE TABLE ${table} (${column} VARCHAR(200))`;
   let query1 = `INSERT INTO ${table} (${column}) VALUES ('${row}')`;
-  let query2 = `ALTER TABLE ${table} ADD COLUMN ${newColumn}`;
 
-  // if (column !== prashna) return query2;
 
-  console.log(query2);
   dbase.query(query, function (err, result) {
     console.log(result, "awd");
     //console.log(query);
   });
   dbase.query(query1, function (err, result) {
-    console.log(result, "awd");
-    //console.log(query);
-  });
-  dbase.query(query2, function (err, result) {
     console.log(result, "awd");
     //console.log(query);
   });
